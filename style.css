@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+}
+
+#squareContainer { 
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+.squares {
+    color: red;
+    background-color: red;
+    height: 1rem;
+    width: 1rem;
+    border: solid black;
+}
