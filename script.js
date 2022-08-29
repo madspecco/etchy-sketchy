@@ -4,7 +4,7 @@ const squareContainer = document.querySelector('#squareContainer');
 // const squares = document.querySelectorAll('.squares');
 
 
-for(let  i = 0; i < 16*16; i++) {
+for(let  i = 0; i < 32*32; i++) {
     // create div
     const square = document.createElement('div');
 
