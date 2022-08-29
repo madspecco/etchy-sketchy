@@ -12,9 +12,7 @@ body {
 }
 
 .squares {
-    color: red;
-    background-color: red;
     height: 1rem;
     width: 1rem;
-    border: solid black;
+    border: solid .1rem black;
 }
