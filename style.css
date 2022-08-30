@@ -5,6 +5,7 @@ html, body {
 body {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
@@ -12,11 +13,22 @@ body {
     padding: 0;
 }
 
-#leftSide {
+.mainDiv {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:column;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
 }
+
+
+#title {
+    text-align: center;
+    font-size: 3rem;
+}
+
 
 #squareContainer { 
     display: grid;
@@ -28,4 +40,17 @@ body {
 
 .squares {
     border: solid .05rem black;/*  to be removed */
+}
+
+.sliderDiv {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#slider {
+    margin-top: 1rem;
+    /*insert code*/
 }
