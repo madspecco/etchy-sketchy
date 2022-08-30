@@ -51,6 +51,6 @@ body {
 }
 
 #slider {
-    margin-top: 1rem;
     /*insert code*/
+    background-color: red;
 }
