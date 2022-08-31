@@ -3,51 +3,48 @@ const squareContainer = document.querySelector('#squareContainer');
 const slider = document.querySelector('#slider');
 const sizeValue = document.querySelector('#sliderSize');
 
-// use the default value for the grid by calling a function with innerHTML
 const DEFAULT_SIZE = 16;
 
 let currentSize = DEFAULT_SIZE;
 
+// utility function to change current size inside updateGrid()
+function setCurrentSize(newSize) {
+    currentSize = newSize;
+}
 
-// get slider value and change slider value
+// utility function to change the text over the slider each time it changes
+function updateSizeValue(value) {
+    sizeValue.innerHTML = `${value} x ${value}`
+}
 
-// function updateSizeValue(value) {
-//     sizeValue.innerHTML = `${value} x ${value}`
-//   }
+// this updates the grid by getting input on the slider
+function updateGrid(value) {
+    setCurrentSize(value);
+    updateSizeValue(value);
+    reloadGrid();
+}
 
-// slider.onmousemove = (e) => updateSizeValue(e.target.value);
+function reloadGrid() {
+    squareContainer.innerHTML = '';
+    createGrid(currentSize);
+}
 
 
+function createGrid(size) {
+    squareContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    squareContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-// slider.oninput = function () {
+    for(let i = 0; i < size * size; i++) {
+        const square = document.createElement('div');
+        square.classList.add('squares');
+        // add color here
+        squareContainer.appendChild(square);
+    }
+}
 
-//     sizeValue.innerHTML = `${this.value} x ${this.value}`;
-//     console.log(this.value);
+slider.onmousemove = (e) => updateSizeValue(e.target.value);
+slider.onchange = (e) => updateGrid(e.target.value);
 
-//     currentSize = this.value;
-//     console.log(currentSize);
-
-//     // squareContainer.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
-//     // squareContainer.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
-// }
-
-// now onto changing the grid according to the slider
-
-for(let  i = 0; i < currentSize*currentSize; i++) {
-    // create div
-    const square = document.createElement('div');
-
-    // attribute class
-    square.className = 'squares';
-
-    squareContainer.appendChild(square);
-
-    square.addEventListener('click', function () {
-        square.style.background = 'black';
-    });
-
-    square.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-        square.style.background = 'blue';
-    });
+window.onload = () => {
+    createGrid(DEFAULT_SIZE);
 }
