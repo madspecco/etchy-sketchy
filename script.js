@@ -8,18 +8,32 @@ const DEFAULT_SIZE = 16;
 
 let currentSize = DEFAULT_SIZE;
 
+
 // get slider value and change slider value
 
-slider.oninput = function () {
+// function updateSizeValue(value) {
+//     sizeValue.innerHTML = `${value} x ${value}`
+//   }
 
-    sizeValue.innerHTML = `${this.value} x ${this.value}`;
-    console.log(this.value);
-}
+// slider.onmousemove = (e) => updateSizeValue(e.target.value);
+
+
+
+// slider.oninput = function () {
+
+//     sizeValue.innerHTML = `${this.value} x ${this.value}`;
+//     console.log(this.value);
+
+//     currentSize = this.value;
+//     console.log(currentSize);
+
+//     // squareContainer.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
+//     // squareContainer.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
+// }
 
 // now onto changing the grid according to the slider
 
-
-for(let  i = 0; i < 32*32; i++) {
+for(let  i = 0; i < currentSize*currentSize; i++) {
     // create div
     const square = document.createElement('div');
 
