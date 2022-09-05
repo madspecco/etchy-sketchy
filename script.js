@@ -1,5 +1,6 @@
 // create divs using js
 const squareContainer = document.querySelector('#squareContainer');
+const clearbtn = document.querySelector('#clearbtn');
 const slider = document.querySelector('#slider');
 const sizeValue = document.querySelector('#sliderSize');
 
@@ -56,7 +57,7 @@ function fill(e) {
 }
 
 // now we need a button to clear the grid
-
+clearbtn.addEventListener('click', reloadGrid);
 
 slider.onmousemove = (e) => updateSizeValue(e.target.value);
 slider.onchange = (e) => updateGrid(e.target.value);
