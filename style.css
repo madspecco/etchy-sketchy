@@ -42,8 +42,9 @@ html, body {
 }
 
 .squares {
-    border: solid .05rem black;/*  to be removed */
+    border: solid .01rem black;/*  to be removed */
 }
+
 
 .sliderDiv {
     display: flex;

@@ -5,6 +5,11 @@ const sizeValue = document.querySelector('#sliderSize');
 
 const DEFAULT_SIZE = 16;
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
+
 let currentSize = DEFAULT_SIZE;
 
 // utility function to change current size inside updateGrid()
@@ -29,18 +34,29 @@ function reloadGrid() {
     createGrid(currentSize);
 }
 
-
 function createGrid(size) {
     squareContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     squareContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
     for(let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
+        square.draggable = false;
         square.classList.add('squares');
-        // add color here
+
+        square.addEventListener('mouseover', fill);
+
         squareContainer.appendChild(square);
     }
 }
+
+// function to add color to a square
+function fill(e) {
+    if(e.type === 'mouseover' && !mouseDown) return;
+    e.target.style.backgroundColor = 'black';
+}
+
+// now we need a button to clear the grid
+
 
 slider.onmousemove = (e) => updateSizeValue(e.target.value);
 slider.onchange = (e) => updateGrid(e.target.value);
