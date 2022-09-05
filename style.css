@@ -13,14 +13,26 @@ html, body {
     padding: 0;
 } */
 
-.header {
-    padding: .5rem;    
+
+.entire-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
 }
 
-#title {
-    text-align: center;
-    font-size: 3rem;
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    
 }
+
 
 .mainDiv {
     display: flex;
@@ -29,7 +41,18 @@ html, body {
 
     justify-content: center;
     align-items: center;
-    gap: 6rem;
+    gap: 2rem;
+}
+
+.header {
+    padding: .5rem;    
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 3rem;
 }
 
 #squareContainer { 
