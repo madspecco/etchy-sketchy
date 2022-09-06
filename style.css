@@ -30,7 +30,6 @@ html, body {
 
     justify-content: center;
     align-items: center;
-    
 }
 
 
@@ -57,11 +56,8 @@ html, body {
 
 #squareContainer { 
     display: grid;
-    /* grid-template-columns: repeat(var(--size), 1fr);
-    grid-template-rows: repeat(var(--size), 1fr); */
     width: 30rem;
     height: 30rem;
-
 }
 
 .squares {

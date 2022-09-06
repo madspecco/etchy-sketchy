@@ -4,6 +4,16 @@ const clearbtn = document.querySelector('#clearbtn');
 const slider = document.querySelector('#slider');
 const sizeValue = document.querySelector('#sliderSize');
 
+// Made the container undraggable since it won't work in HTML
+// So the user can sketch cursively
+squareContainer.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+});
+
+squareContainer.addEventListener('drop', (e) => {
+    e.preventDefault();
+});
+
 const DEFAULT_SIZE = 16;
 
 let mouseDown = false;
@@ -41,10 +51,10 @@ function createGrid(size) {
 
     for(let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
-        square.draggable = false;
         square.classList.add('squares');
 
         square.addEventListener('mouseover', fill);
+        square.addEventListener('mousedown', fill);
 
         squareContainer.appendChild(square);
     }
