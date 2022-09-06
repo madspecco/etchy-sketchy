@@ -13,12 +13,16 @@ const DEFAULT_COLOR = '#262626';
 const DEFAULT_MODE = 'color';
 const DEFAULT_SIZE = 16;
 
+
+let currentColor = DEFAULT_COLOR;
 let currentMode = DEFAULT_MODE;
 let currentSize = DEFAULT_SIZE;
+
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
+
 
 // Made the container undraggable since it won't work in HTML
 // So the user can sketch cursively
@@ -77,7 +81,7 @@ function fill(e) {
         e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
     }
     else if(currentMode === 'color') {
-        e.target.style.backgroundColor = DEFAULT_COLOR;
+        e.target.style.backgroundColor = currentColor;
     }
 
     else if(currentMode === 'erase') {
@@ -86,23 +90,16 @@ function fill(e) {
 
 }
 
-// now we need a button to clear the grid
-clearbtn.addEventListener('click', reloadGrid);
+colorPicker.oninput = (e) => (currentColor = e.target.value);
+
+colorbtn.onclick = () => (currentMode = 'color');
+rainbowbtn.onclick = () => (currentMode = 'rainbow');
+erasebtn.onclick = () => (currentMode = 'erase');
 
 slider.onmousemove = (e) => updateSizeValue(e.target.value);
 slider.onchange = (e) => updateGrid(e.target.value);
 
-colorbtn.addEventListener('click', () => {
-    currentMode = 'color';
-})
-
-rainbowbtn.addEventListener('click', () => {
-    currentMode = 'rainbow';
-})
-
-erasebtn.addEventListener('click', () => {
-    currentMode = 'erase';
-})
+clearbtn.addEventListener('click', reloadGrid);
 
 window.onload = () => {
     createGrid(DEFAULT_SIZE);
