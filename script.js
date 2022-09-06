@@ -1,4 +1,4 @@
-// create divs using js
+// Constants from HTML
 const squareContainer = document.querySelector('#squareContainer');
 const slider = document.querySelector('#slider');
 const sizeValue = document.querySelector('#sliderSize');
@@ -8,7 +8,7 @@ const rainbowbtn = document.querySelector('#rainbowbtn');
 const erasebtn = document.querySelector('#erasebtn');
 const clearbtn = document.querySelector('#clearbtn');
 
-
+// Default Settings
 const DEFAULT_COLOR = '#262626';
 const DEFAULT_MODE = 'color';
 const DEFAULT_SIZE = 16;
@@ -35,12 +35,13 @@ squareContainer.addEventListener('drop', (e) => {
     e.preventDefault();
 });
 
-// utility function to change current size inside updateGrid()
+// Utility Functions
+// change current size inside updateGrid()
 function setCurrentSize(newSize) {
     currentSize = newSize;
 }
 
-// utility function to change the text over the slider each time it changes
+// change the text over the slider each time it changes
 function updateSizeValue(value) {
     sizeValue.innerHTML = `${value} x ${value}`
 }
@@ -52,6 +53,7 @@ function updateGrid(value) {
     reloadGrid();
 }
 
+// empties the grid and reloads it with the current size
 function reloadGrid() {
     squareContainer.innerHTML = '';
     createGrid(currentSize);
@@ -72,7 +74,7 @@ function createGrid(size) {
     }
 }
 
-// function to add color to a square
+// add color to a square
 function fill(e) {
     if(e.type === 'mouseover' && !mouseDown) return;
     if(currentMode === 'rainbow') {
@@ -91,8 +93,8 @@ function fill(e) {
 
 }
 
+// Events
 colorPicker.oninput = (e) => (currentColor = e.target.value);
-
 
 colorbtn.onclick = () => {
     colorbtn.classList.add('toggled');
@@ -120,13 +122,8 @@ erasebtn.onclick = () => {
 
 clearbtn.addEventListener('click', reloadGrid);
 
-// funtion to toggle button as ON
-// only one button may be toggled at once!
-
 slider.onmousemove = (e) => updateSizeValue(e.target.value);
 slider.onchange = (e) => updateGrid(e.target.value);
-
-
 
 window.onload = () => {
     createGrid(DEFAULT_SIZE);
