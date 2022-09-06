@@ -21,6 +21,8 @@ html, body {
 
     justify-content: center;
     align-items: center;
+
+    margin-right: 5rem;
 }
 
 .settings {
@@ -30,11 +32,14 @@ html, body {
 
     justify-content: center;
     align-items: center;
+
+    margin-right: 5rem;
+    gap: 1.5rem;
 }
 
 #colorPicker {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     
     appearance: none;
     -webkit-appearance: none;
@@ -47,6 +52,10 @@ html, body {
     border-radius: 50%;
 }
 
+button {
+    width: 6rem;
+    height: 3rem;
+}
 
 .mainDiv {
     display: flex;
@@ -56,6 +65,7 @@ html, body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    position: static;
 }
 
 .header {
