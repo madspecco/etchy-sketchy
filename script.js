@@ -12,6 +12,7 @@ const clearbtn = document.querySelector('#clearbtn');
 const DEFAULT_COLOR = '#262626';
 const DEFAULT_MODE = 'color';
 const DEFAULT_SIZE = 16;
+colorbtn.classList.add('toggled');  // set button as toggled on page load
 
 
 let currentColor = DEFAULT_COLOR;
@@ -92,14 +93,40 @@ function fill(e) {
 
 colorPicker.oninput = (e) => (currentColor = e.target.value);
 
-colorbtn.onclick = () => (currentMode = 'color');
-rainbowbtn.onclick = () => (currentMode = 'rainbow');
-erasebtn.onclick = () => (currentMode = 'erase');
+
+colorbtn.onclick = () => {
+    colorbtn.classList.add('toggled');
+    rainbowbtn.classList.remove('toggled');
+    erasebtn.classList.remove('toggled');
+    clearbtn.classList.remove('toggled');
+    currentMode = 'color';
+}
+
+rainbowbtn.onclick = () => {
+    colorbtn.classList.remove('toggled');
+    rainbowbtn.classList.add('toggled');
+    erasebtn.classList.remove('toggled');
+    clearbtn.classList.remove('toggled');
+    currentMode = 'rainbow';
+}
+
+erasebtn.onclick = () => {
+    colorbtn.classList.remove('toggled');
+    rainbowbtn.classList.remove('toggled');
+    erasebtn.classList.add('toggled');
+    clearbtn.classList.remove('toggled');
+    currentMode = 'erase';
+}
+
+clearbtn.addEventListener('click', reloadGrid);
+
+// funtion to toggle button as ON
+// only one button may be toggled at once!
 
 slider.onmousemove = (e) => updateSizeValue(e.target.value);
 slider.onchange = (e) => updateGrid(e.target.value);
 
-clearbtn.addEventListener('click', reloadGrid);
+
 
 window.onload = () => {
     createGrid(DEFAULT_SIZE);
