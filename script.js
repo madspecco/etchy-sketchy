@@ -74,7 +74,7 @@ function createGrid(size) {
     }
 }
 
-// add color to a square
+// Add color to a square
 function fill(e) {
     if(e.type === 'mouseover' && !mouseDown) return;
     if(currentMode === 'rainbow') {
