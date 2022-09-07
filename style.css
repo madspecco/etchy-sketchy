@@ -26,10 +26,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
     justify-content: center;
     align-items: center;
-
     margin-right: 8rem;
 }
 
@@ -37,10 +35,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     margin-right: 5rem;
     gap: 1.5rem;
 }
@@ -48,7 +44,6 @@ body {
 #colorPicker {
     width: 6rem;
     height: 6rem;
-    
     appearance: none;
     -webkit-appearance: none;
     border: none;
@@ -88,7 +83,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -128,7 +122,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 }
@@ -155,15 +148,12 @@ input[type='range']::-webkit-slider-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #262626;
-    
     height: 3rem;
     font-weight: 500;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-
     margin-left: 1.5rem;
 }
