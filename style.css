@@ -65,11 +65,23 @@ button, input {
     height: 3rem;
     border-radius: .5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 1; 
+    /* hover glow */
+    -webkit-box-shadow: 0px 0px 20px #eaebed;
+    -moz-box-shadow: 0px 0px 20px #eaebed;
+    box-shadow: 0px 0px 20px #eaebed;
 }
 
 .toggled {
     background-color: #201E20;
     color: #E0A96D;
+    -webkit-box-shadow: 0px 0px 20px #eaebed;
+    -moz-box-shadow: 0px 0px 20px #eaebed;
+    box-shadow: 0px 0px 20px #eaebed;
 }
 
 .mainDiv {
