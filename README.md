@@ -5,7 +5,7 @@
 * [Link to Assignment](https://github.com/madspecco/etchy-sketchy)
 
 # About
-This webiste allows the user to sketch using different colors. \
+This website allows the user to sketch using different colors. \
 It also comes with features like:
 - Rainbow Mode
 - Erase Mode
