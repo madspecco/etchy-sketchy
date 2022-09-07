@@ -9,7 +9,7 @@ const erasebtn = document.querySelector('#erasebtn');
 const clearbtn = document.querySelector('#clearbtn');
 
 // Default Settings
-const DEFAULT_COLOR = '#262626';
+const DEFAULT_COLOR = '#201E20';
 const DEFAULT_MODE = 'color';
 const DEFAULT_SIZE = 16;
 colorbtn.classList.add('toggled');  // set button as toggled on page load

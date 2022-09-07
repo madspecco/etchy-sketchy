@@ -1,11 +1,11 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: #faebd7;
+    background-color: #DDC3A5;
 }
 
 a {
-    color:#262626;
+    color:#201E20;
 }
 
 a::-webkit-any-link {
@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -61,13 +62,14 @@ body {
 
 button, input {
     width: 100%;
-    
     height: 3rem;
+    border-radius: .5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .toggled {
-    background-color: #262626;
-    color: #faebd7;
+    background-color: #201E20;
+    color: #E0A96D;
 }
 
 .mainDiv {
@@ -93,7 +95,7 @@ button, input {
 #title {
     text-align: center;
     font-size: 3rem;
-    color: #262626;
+    color: #201E20;
 }
 
 #squareContainer { 
@@ -105,7 +107,8 @@ button, input {
 }
 
 .squares {
-    border: solid .01rem black;/*  to be removed */
+    border:solid 1px;
+    border-color:#DDC3A5;
 }
 
 
@@ -123,7 +126,7 @@ button, input {
     width: 100%;
     height: .5rem;
     outline: none;
-    background-color: aliceblue;
+    background-color: #E0A96D;
     border-radius: 1rem;
     border: #262626 solid 1px;
 }
