@@ -18,4 +18,4 @@ In ordder to create this website I have used certain JS techniques such as:
 - Updating HTML live as the user inputs the desired grid size as well as the color picker
 
 # Overview
-<img src="./preview.png">
+<img src="./images/preview.png">
